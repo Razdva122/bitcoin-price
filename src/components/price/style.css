@@ -1,0 +1,23 @@
+.price-container > span {
+	display: inline-block;
+}
+
+.BTC-price {
+	width: 150px;
+}
+
+.USD-price {
+	width: 200px;
+}
+
+.RUB-price {
+	width: 300px;
+}
+
+.profit {
+	color: #79ea86;
+}
+
+.loss {
+	color: #e75757;
+}
