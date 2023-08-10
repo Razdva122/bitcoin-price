@@ -38,7 +38,9 @@ export function getPriceOfDatesFromCache(): Array<{date: string; BTC: number; RU
 export async function getStateOfWallet(wallet: string): Promise<any> {
 	let state = JSON.parse(localStorage.getItem(WALLET_HISTORY_PATH) ?? '{}');
 
-	if (state[wallet] && state[wallet].unconfirmed_balance === 0) {
+	console.log(state[wallet]);
+
+	if (state[wallet] && state[wallet].unconfirmed_balance === 0 && state[wallet].txrefs) {
 		return state[wallet];
 	}
 
