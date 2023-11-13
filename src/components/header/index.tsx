@@ -34,7 +34,7 @@ export const Header: FC<{
 		value={priceType}
 		onChange={name => setPriceType(name)}
 	>
-		<Select.Option value={'full'} key={'full'}>{'full'}</Select.Option>
+		<Select.Option value={'total'} key={'total'}>{'total'}</Select.Option>
 		<Select.Option value={'diff'} key={'diff'}>{'diff'}</Select.Option>
 	</Select>
 

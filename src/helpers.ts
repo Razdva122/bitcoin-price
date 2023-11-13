@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { IPriceTime,  IPrice, ITransaction } from './interface';
 
-export const DATES_HISTORY_PATH = '[[DATES_HISTORY_PATH]]';
-export const WALLET_HISTORY_PATH = '[[WALLET_HISTORY_PATH]]';
+import { DATES_HISTORY_PATH, WALLET_HISTORY_PATH } from './const';
 
 export async function getPriceOfDate(date: string): Promise<{BTC: number; RUB: number}> {
 	let state = JSON.parse(localStorage.getItem(DATES_HISTORY_PATH) ?? '{}');
@@ -37,8 +36,6 @@ export function getPriceOfDatesFromCache(): Array<{date: string; BTC: number; RU
 
 export async function getStateOfWallet(wallet: string): Promise<any> {
 	let state = JSON.parse(localStorage.getItem(WALLET_HISTORY_PATH) ?? '{}');
-
-	console.log(state[wallet]);
 
 	if (state[wallet] && state[wallet].unconfirmed_balance === 0 && state[wallet].txrefs) {
 		return state[wallet];

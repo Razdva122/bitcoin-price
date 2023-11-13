@@ -34,8 +34,8 @@ export const Price: FC<{price: IPriceTime, text?: string, type?: TPriceType}> = 
 		<div className='price-container'>
 			{textHtml}
 			<span className='BTC-price'>BTC: {price.buy.BTC.toFixed(7)}</span>
-			<span className='USD-price'>{type === 'full' ? totalPrice('USD') : diffOfPrice('USD')}</span>
-			<span className='RUB-price'>{type === 'full' ? totalPrice('RUB') : diffOfPrice('RUB')}</span>
+			<span className='USD-price'>{type === 'total' ? totalPrice('USD') : diffOfPrice('USD')}</span>
+			<span className='RUB-price'>{type === 'total' ? totalPrice('RUB') : diffOfPrice('RUB')}</span>
 		</div>
 	)
 }

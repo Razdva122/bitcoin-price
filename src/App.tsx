@@ -17,7 +17,7 @@ import {
 } from './helpers';
 import { Spin } from 'antd';
 
-export const PORTFOLIO_DATA_PATH = '[[PORTFOLIO_DATA_PATH]]';
+import { PORTFOLIO_DATA_PATH } from './const';
 
 function App() {
 	const [portfolios, setPortfolios] = useState<IAppData>(JSON.parse(localStorage.getItem(PORTFOLIO_DATA_PATH) ?? '{}'));

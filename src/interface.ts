@@ -45,4 +45,4 @@ export interface IPriceHistory {
 	}
 }
 
-export type TPriceType = 'full' | 'diff';
+export type TPriceType = 'total' | 'diff';
