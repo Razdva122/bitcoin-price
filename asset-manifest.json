@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/bitcoin-price/static/css/main.08382af3.css",
+    "main.js": "/bitcoin-price/static/js/main.e38a60d6.js",
+    "static/js/787.67a1ae95.chunk.js": "/bitcoin-price/static/js/787.67a1ae95.chunk.js",
+    "index.html": "/bitcoin-price/index.html",
+    "main.08382af3.css.map": "/bitcoin-price/static/css/main.08382af3.css.map",
+    "main.e38a60d6.js.map": "/bitcoin-price/static/js/main.e38a60d6.js.map",
+    "787.67a1ae95.chunk.js.map": "/bitcoin-price/static/js/787.67a1ae95.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.08382af3.css",
+    "static/js/main.e38a60d6.js"
+  ]
+}
