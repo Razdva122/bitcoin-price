@@ -44,3 +44,5 @@ export interface IPriceHistory {
 		rub: number;
 	}
 }
+
+export type TPriceType = 'full' | 'diff';

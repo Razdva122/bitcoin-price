@@ -4,7 +4,7 @@ import { Header } from './components/header';
 import { WalletsList } from './components/wallets-list';
 import { Price } from './components/price';
 import { Chart } from './components/chart';
-import { IAppData, IGlobalState, IPortfolioState } from './interface';
+import { IAppData, IGlobalState, IPortfolioState, TPriceType } from './interface';
 import { 
 	getPriceOfDate, 
 	getStateOfWallet, 
@@ -23,6 +23,7 @@ function App() {
 	const [portfolios, setPortfolios] = useState<IAppData>(JSON.parse(localStorage.getItem(PORTFOLIO_DATA_PATH) ?? '{}'));
 	const [portfolioState, setPortfolioState] = useState<IGlobalState | undefined>(undefined);
 	const [selectedPortfolio, setSelectedPortfolio] = useState<string | undefined>(Object.keys(portfolios)[2]);
+	const [priceType, setPriceType] = useState<TPriceType>('diff');
 
 	useEffect(() => {
 		const getData = async function() {
@@ -256,8 +257,8 @@ function App() {
 		}
 
 		mainContent = (<div>
-			<Price price={portfolioState[selectedPortfolio].total} text={'TOTAL:'}></Price>
-			<Price price={getAveragePrice(portfolioState[selectedPortfolio].total)} text={'AVG buy:'}></Price>
+			<Price price={portfolioState[selectedPortfolio].total} text={'TOTAL:'} type={priceType}></Price>
+			<Price price={getAveragePrice(portfolioState[selectedPortfolio].total)} text={'AVG buy:'} type={priceType}></Price>
 			<WalletsList addWallet={addWallet} wallets={portfolioState[selectedPortfolio].wallets}></WalletsList>
 			<Chart type={'line'} data={chartDate} options={chartOptions}></Chart>
 		</div>)
@@ -266,10 +267,12 @@ function App() {
   return (
     <div className="App">
       <Header
-				portfolios={portfolios} 
-				selectedPortfolio={selectedPortfolio} 
+				portfolios={portfolios}
+				selectedPortfolio={selectedPortfolio}
+				priceType={priceType}
 				addPortfolio={addPortfolio}
 				setSelectedPortfolio={setSelectedPortfolio}
+				setPriceType={setPriceType}
 			></Header>
 			{mainContent}
     </div>
